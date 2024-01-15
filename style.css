@@ -1,33 +1,112 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
+    background-color: purple;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    margin: 0;
+}
+#searchForm {
+    background-color: white;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
 }
 
-input {
+#cityInput {
+    width: 20%; /* Make the input take full width */
     padding: 8px;
-    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Add margin for spacing between input and button */
 }
 
-button {
-    padding: 8px 15px;
+#searchButton {
+    width: 20%; /* Make the button take full width */
+    background-color: lightblue;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-#currentWeather, #forecast, #searchHistory {
+
+nav {
+    margin-bottom: 20px;
+}
+
+#currentWeather {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 0px 30px auto; /* Add margin to create space between elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 75%; /* Take up 40% of the container */
+}
+
+#fiveDayForecast {
+    background-color: rgb(255, 255, 255);
+    color: rgb(61, 97, 159);
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 0 30px auto; /* Move to the right and add margin to create space between elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 76%; /* Take up 60% of the container */
+}
+.day {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Search bar styles */
+#searchForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cityInput {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#searchButton {
+    background-color: lightblue; /* Light blue search button */
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Recent searches styles */
+#searchHistory {
     margin-top: 20px;
+}
+
+.recentSearch {
+    background-color: #f0f0f0; /* Light grey background for recent searches */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
