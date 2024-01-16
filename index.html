@@ -9,29 +9,31 @@
 <body>
     <div class="container">
         <h1>Weather Dashboard</h1>
-    </div>   
-        <!-- Form for city search -->
-        <form id="searchForm">
-            <label for="cityInput">Enter City:</label>
-            <input type="text" id="cityInput" required>
-            <button type="submit">Search</button>
-        </form>
+    </div>
 
-         <!-- Display current weather -->
-         <div id="currentWeather">
+    <!-- Form for city search -->
+    <form id="searchForm">
+        <label for="cityInput">Enter City:</label>
+        <input type="text" id="cityInput" required>
+        <button type="submit">Search</button>
+    </form>
+        <!-- Search history will be displayed here -->
+        <div id="searchHistory">
+            <div id="searchHistoryButtons"></div>
+        <button id="clearHistoryButton" onclick="clearSearchHistory()">Clear History</button>
+    </div>
+    
+
+    <div id="weatherContainer">
+        <div id="currentWeather">
             <!-- Display current weather information here -->
         </div>
 
-
-        <!-- Display 5-day forecast -->
-        <div id="fiveDayForecast">
-            <!-- Display 5-day forecast information here -->
-        </div>
-
-        <div id="searchHistory">
-            <!-- Search history will be displayed here -->
-        </div>
-
+   <!-- Display 5-day forecast -->
+   <div id="fiveDayForecast">
+    <!-- Display 5-day forecast information here -->
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
