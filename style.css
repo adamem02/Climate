@@ -1,7 +1,7 @@
-
 nav {
     margin-bottom: 20px;
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -10,12 +10,63 @@ body {
 }
 
 .container {
-    background-color: purple;
+    background-color: rgb(22, 104, 181);
     text-align: center;
     padding: 10px;
     color: #fff;
     margin: 0;
 }
+
+#weatherForecastContainer {
+    margin-top: -70px;
+}
+
+#currentWeather {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    margin-left: auto;
+    margin-top: 0; 
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 70%;
+}
+
+#fiveDayForecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    margin-left: auto;
+    margin-top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 70%;
+}
+#fiveDayForecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+#weatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day {
+    background-color: #215b8b;
+    border-radius: 8px;
+}
+
 #searchForm {
     background-color: white;
     border-radius: 10px;
@@ -25,41 +76,15 @@ body {
     width: 20%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) */
+    align-items: flex-start; 
 }
-
-#cityInput {
-    width: 20%; /* Make the input take full width */
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px; /* Add margin for spacing between input and button */
-}
-/* Search bar styles */
 #searchForm {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-#cityInput {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
 #searchButton {
-    background-color: lightblue; /* Light blue search button */
-    color: #fff;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-
-#searchButton {
-    width: 20%; /* Make the button take full width */
+    width: 20%;
     background-color: lightblue;
     color: #fff;
     padding: 8px 12px;
@@ -67,42 +92,51 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+#searchButton:hover {
+    background-color: #000000; 
+}
+
+#cityInput {
+    width: 20%; 
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px; 
+}
+
+#cityInput {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
 #searchHistory {
-    margin-top: 20px;
-}
-
-.recentSearch {
-    background-color: #f0f0f0; /* Light grey background for recent searches */
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-#currentWeather {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 8px;
+    order: 2; 
+    background-color: rgb(22, 104, 181);
+    border-radius: 10px;
     padding: 20px;
-    margin: 0 0px 30px auto; /* Add margin to create space between elements */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 75%; 
+    margin-bottom: 20px;
+    width: 20%;
+    flex-direction: column;
+    align-items: flex-start; 
+    max-height: 100px; /* Limit the height of the container */
+}
+#clearHistory {
+    background-color: #29556b; 
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-top: 10px; 
+    max-height: 100px;
 }
 
-#fiveDayForecast {
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    border: 2px solid black;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 0 0 30px auto; /* Move to the right and add margin to create space between elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 76%;
+#clearHistory:hover {
+    background-color: #3a6f8f; 
 }
-.day {
-    background-color: #215b8b;
+.recentSearch {
+    background-color: #718be2; 
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 10px;
