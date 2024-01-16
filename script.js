@@ -76,6 +76,16 @@ let searchHistory = [];
 
 // Function to add a city to the search history
 function addToSearchHistory(city) {
+    // Check if the city already exists in the search history
+    if (searchHistory.includes(city)) {
+        // Display a confirmation message
+        const isConfirmed = confirm(`"${city}" is already in the search history. Do you want to add it again?`);
+
+        if (!isConfirmed) {
+            return; // Exit the function if the user cancels
+        }
+    }
+
     // Add the city to the search history array
     searchHistory.push(city);
 
@@ -92,15 +102,33 @@ function addToSearchHistory(city) {
 // Function to update the search history display
 function updateSearchHistoryDisplay() {
     // Get the search history element
-    const searchHistoryElement = document.getElementById('searchHistory');
+    const searchHistoryElement = document.getElementById('searchHistoryButtons');
 
     // Clear the existing content
     searchHistoryElement.innerHTML = '<h2>Search History</h2>';
 
-    // Update the UI with the search history
+    // Update the UI with the search history buttons
     searchHistory.forEach((city) => {
-        searchHistoryElement.innerHTML += `<p>${city}</p>`;
+        const button = document.createElement('button');
+        button.textContent = city;
+        button.addEventListener('click', () => {
+            // Call a function to fetch weather data based on the clicked city
+            getWeatherData(city);
+        });
+        searchHistoryElement.appendChild(button);
     });
+}
+
+// Function to clear the search history
+function clearSearchHistory() {
+    // Clear the search history array
+    searchHistory = [];
+
+    // Save the updated search history to localStorage
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+
+    // Call a function to update the search history display
+    updateSearchHistoryDisplay();
 }
 
 // Function to load search history from localStorage on page load
@@ -113,6 +141,7 @@ function loadSearchHistory() {
 // Load search history on page load
 loadSearchHistory();
 
+// Add an event listener for the form submission
 document.getElementById('searchForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
